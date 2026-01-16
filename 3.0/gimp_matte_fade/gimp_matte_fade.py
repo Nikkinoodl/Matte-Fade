@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 '''
 An intermediate GIMP 3 plugin that combines a matte effect with color gradients. The plugin
@@ -269,7 +268,7 @@ class MatteFade(Gimp.PlugIn):
 
 			#set contexts for gradient
 			Gimp.context_set_opacity(colorOpacity)
-			Gimp.context_set_paint_mode(Gimp.LayerMode.OVERLAY)
+			Gimp.context_set_paint_mode(Gimp.LayerMode.HSL_COLOR)
 			Gimp.context_set_gradient_fg_bg_rgb()
 			Gimp.context_set_gradient_blend_color_space(Gimp.GradientBlendColorSpace.RGB_LINEAR)
 			Gimp.context_set_gradient_reverse(flipColors)
@@ -297,7 +296,7 @@ class MatteFade(Gimp.PlugIn):
 
 			elif colorScheme == 'Purple/Neutral':
 				#neutral colors to purple and neutral gray
-				fgColor.set_rgba(162/255, 77/255, 1/255, 0.0)
+				fgColor.set_rgba(124/255, 63/255, 156/255, 0.0)
 				bgColor.set_rgba(189/255, 181/255, 149/255, 0.0)
 
 				Gimp.context_set_foreground(fgColor)
