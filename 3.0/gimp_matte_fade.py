@@ -324,7 +324,7 @@ class MatteFade(Gimp.PlugIn):
 				Gimp.context_set_foreground(bgColor)
 
 			#create new layer and fill with transparency
-			copyLayer2=Gimp.Layer.new(image, "ColorOverlay", w, h, Gimp.ImageType.RGBA_IMAGE, 50.0, Gimp.LayerMode.HSL_COLOR)
+			copyLayer2=Gimp.Layer.new(image, "ColorOverlay", w, h, Gimp.ImageType.RGBA_IMAGE, 50.0, Gimp.LayerMode.OVERLAY)
 			image.insert_layer(copyLayer2, None, -1)
 			
 			#add gradient w/start point in top center of image finish in bottom center
@@ -354,7 +354,7 @@ class MatteFade(Gimp.PlugIn):
 			oeOffset = 0
 
 			#add and insert new layer
-			copyLayer4=Gimp.Layer.new(image, "OverExposure", w, h, Gimp.ImageType.RGBA_IMAGE, 50.0, Gimp.LayerMode.OVERLAY)
+			copyLayer4=Gimp.Layer.new(image, "OverExposure", w, h, Gimp.ImageType.RGBA_IMAGE, 50.0, Gimp.LayerMode.HSL_COLOR)
 			image.insert_layer(copyLayer4, None, -1)
 
 			#add radial gradient w/start point in center of image finish in bottom center or center right edge
